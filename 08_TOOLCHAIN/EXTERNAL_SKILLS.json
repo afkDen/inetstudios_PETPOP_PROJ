@@ -25,7 +25,8 @@
         "roblox-mcp",
         "roblox-rojo"
       ],
-      "ref": "c914ce65470a6eb1b28000b8c58d5543b48760ca"
+      "ref": "c914ce65470a6eb1b28000b8c58d5543b48760ca",
+      "license_file": "08_TOOLCHAIN/THIRD_PARTY_LICENSES/nonlooped-roblox-suite-MIT.txt"
     },
     {
       "name": "gamedev-disciplines",
@@ -51,7 +52,9 @@
         "performance-optimization",
         "roblox-studio-workflow"
       ],
-      "ref": "d4b0e35550c55ae70bdfcab4ef5a0e94610438a9"
+      "ref": "d4b0e35550c55ae70bdfcab4ef5a0e94610438a9",
+      "license_file": "08_TOOLCHAIN/THIRD_PARTY_LICENSES/gamedev-skills-awesome-gamedev-agent-skills-APACHE-2.0.txt",
+      "notice_file": "08_TOOLCHAIN/THIRD_PARTY_LICENSES/gamedev-skills-awesome-gamedev-agent-skills-NOTICE.txt"
     },
     {
       "name": "engineering-quality",
@@ -64,7 +67,8 @@
         "technical-documentation",
         "adr-authoring"
       ],
-      "ref": "affec9d8cba35a3b8d632a64ab547ea8fcc53380"
+      "ref": "affec9d8cba35a3b8d632a64ab547ea8fcc53380",
+      "license_file": "08_TOOLCHAIN/THIRD_PARTY_LICENSES/magnus919-agent-skills-MIT.txt"
     }
   ],
   "installer": {
@@ -75,5 +79,6 @@
     "scope": "project",
     "telemetry": "disabled",
     "canonical_destination": ".agents/skills"
-  }
+  },
+  "execution_policy": "08_TOOLCHAIN/EXTERNAL_SKILL_EXECUTION_POLICY.md"
 }

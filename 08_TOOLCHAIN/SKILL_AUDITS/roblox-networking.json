@@ -1,0 +1,45 @@
+{
+  "root": ".agents/skills/roblox-networking",
+  "skill_files": 1,
+  "scanned_text_files": 6,
+  "finding_counts": {
+    "network": 0,
+    "process": 0,
+    "secrets": 5,
+    "destructive": 0,
+    "lifecycle": 0
+  },
+  "findings": [
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 53,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 84,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\exploits-and-defenses.md",
+      "line": 25,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\RateLimiter.lua",
+      "line": 8,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\RateLimiter.lua",
+      "line": 11,
+      "match": "token"
+    }
+  ],
+  "verdict": "SEMANTIC_REVIEW_REQUIRED"
+}

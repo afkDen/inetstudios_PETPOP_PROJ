@@ -1,0 +1,33 @@
+{
+  "root": ".agents/skills/roblox-datastores",
+  "skill_files": 1,
+  "scanned_text_files": 9,
+  "finding_counts": {
+    "network": 0,
+    "process": 0,
+    "secrets": 3,
+    "destructive": 0,
+    "lifecycle": 0
+  },
+  "findings": [
+    {
+      "risk": "secrets",
+      "path": "references\\best-practices-and-gotchas.md",
+      "line": 81,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\best-practices-and-gotchas.md",
+      "line": 82,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\best-practices-and-gotchas.md",
+      "line": 82,
+      "match": "token"
+    }
+  ],
+  "verdict": "SEMANTIC_REVIEW_REQUIRED"
+}

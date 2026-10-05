@@ -23,7 +23,7 @@ def authorized_global_branch():
 def load(p): return json.loads(p.read_text())
 def save(p,o): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(o,indent=2)+'\n')
 def run(c,check=True,env=None):
- e=os.environ.copy(); e.update(env or {}); print('+',' '.join(c)); return subprocess.run(c,cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,check=check,env=e)
+ e=os.environ.copy(); e.update(env or {}); print('+',' '.join(c)); return subprocess.run(c,cwd=ROOT,text=True,encoding='utf-8',errors='replace',stdout=subprocess.PIPE,stderr=subprocess.STDOUT,check=check,env=e)
 
 def treehash(root: Path):
  """Hash paths, object types, symlink targets, and file bytes for the complete skill tree."""

@@ -1,0 +1,165 @@
+{
+  "root": ".agents/skills/technical-documentation",
+  "skill_files": 1,
+  "scanned_text_files": 7,
+  "finding_counts": {
+    "network": 4,
+    "process": 0,
+    "secrets": 21,
+    "destructive": 0,
+    "lifecycle": 0
+  },
+  "findings": [
+    {
+      "risk": "secrets",
+      "path": "evals\\evals.json",
+      "line": 20,
+      "match": "token"
+    },
+    {
+      "risk": "network",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 50,
+      "match": "curl"
+    },
+    {
+      "risk": "network",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 383,
+      "match": "curl"
+    },
+    {
+      "risk": "network",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 387,
+      "match": "curl"
+    },
+    {
+      "risk": "network",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 461,
+      "match": "curl"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 46,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 104,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 126,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 144,
+      "match": "Cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 144,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 144,
+      "match": "Cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 150,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 408,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 474,
+      "match": "apiKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 476,
+      "match": "API-Key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 480,
+      "match": "API-Key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 482,
+      "match": "API-Key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 491,
+      "match": "API-Key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 493,
+      "match": "API-Key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 495,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 502,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 503,
+      "match": "API-Key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 507,
+      "match": "Token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 517,
+      "match": "Token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\api-documentation-cli-help.md",
+      "line": 530,
+      "match": "token"
+    }
+  ],
+  "verdict": "SEMANTIC_REVIEW_REQUIRED"
+}

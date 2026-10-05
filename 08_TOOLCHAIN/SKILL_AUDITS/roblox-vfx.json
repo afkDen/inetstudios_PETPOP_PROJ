@@ -1,0 +1,27 @@
+{
+  "root": ".agents/skills/roblox-vfx",
+  "skill_files": 1,
+  "scanned_text_files": 4,
+  "finding_counts": {
+    "network": 0,
+    "process": 0,
+    "secrets": 0,
+    "destructive": 0,
+    "lifecycle": 2
+  },
+  "findings": [
+    {
+      "risk": "lifecycle",
+      "path": "SKILL.md",
+      "line": 43,
+      "match": "Prepare"
+    },
+    {
+      "risk": "lifecycle",
+      "path": "references\\particle-emitter-properties.md",
+      "line": 58,
+      "match": "Prepare"
+    }
+  ],
+  "verdict": "SEMANTIC_REVIEW_REQUIRED"
+}

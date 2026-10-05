@@ -11,6 +11,17 @@ class Contract(unittest.TestCase):
    if p.is_dir(): self.assertTrue((p/'SKILL.md').exists(),p.name); self.assertFalse(list(p.rglob('AGENTS.md')))
  def test_external_installs_universal(self):
   c=json.loads((ROOT/'08_TOOLCHAIN/EXTERNAL_SKILLS.json').read_text()); self.assertEqual(c['installer']['agent'],'universal'); self.assertEqual(c['installer']['canonical_destination'],'.agents/skills')
+ def test_external_skill_policy_and_license_material_are_explicit(self):
+  c=json.loads((ROOT/'08_TOOLCHAIN/EXTERNAL_SKILLS.json').read_text()); policy=ROOT/c['execution_policy']; self.assertTrue(policy.is_file()); self.assertIn(c['execution_policy'],(ROOT/'AGENTS.md').read_text())
+  pt=policy.read_text();
+  for token in ['not workflow authorities','not loosened merely to make the pipeline green','Production mutation','roblox-open-cloud','second sync bridge','not permission to copy']: self.assertIn(token,pt)
+  for src in c['sources']:
+   if src.get('install')!='required': continue
+   lp=ROOT/src['license_file']; self.assertTrue(lp.is_file(),src['name']); lic=lp.read_text(errors='replace')
+   if src['license']=='MIT': self.assertIn('MIT License',lic,src['name'])
+   if src['license']=='Apache-2.0': self.assertIn('Apache License',lic,src['name']); self.assertIn('Version 2.0',lic,src['name'])
+   if src.get('notice_file'): self.assertTrue((ROOT/src['notice_file']).is_file(),src['name'])
+  owned=set(json.loads((ROOT/'08_TOOLCHAIN/TEAM_POLICY.json').read_text())['integrator_owned']); self.assertIn('08_TOOLCHAIN/EXTERNAL_SKILL_EXECUTION_POLICY.md',owned); self.assertIn('08_TOOLCHAIN/THIRD_PARTY_LICENSES',owned)
  def test_skill_registry(self):
   r=json.loads((ROOT/'08_TOOLCHAIN/SKILL_REGISTRY.json').read_text()); self.assertEqual(r['canonical_root'],'.agents/skills'); self.assertEqual(len({x['name'] for x in r['skills']}),len(r['skills'])); self.assertGreaterEqual(len(r['skills']),55)
  def test_external_registry_exact_match(self):

@@ -1,6 +1,24 @@
-# Third-Party Notices — bundled adaptations
+# Third-Party Notices — external skills and bundled adaptations
 
 This reusable bootstrap contains project-authored adaptations informed by external skills. The adapted files are maintained as project skills; they are **not** floating upstream installs. Exact source provenance is also recorded in `08_TOOLCHAIN/SKILL_REGISTRY.json`.
+
+This repository also installs a reviewed, immutable subset of third-party skills during first-time shared initialization. Their complete installed skill trees are locked separately in `08_TOOLCHAIN/SKILL_LOCK.json`; required redistribution license/NOTICE material is preserved under `08_TOOLCHAIN/THIRD_PARTY_LICENSES/` so those locked trees do not need to be modified.
+
+## Required external skill sources
+
+### nonlooped/roblox-suite — MIT
+
+Pinned source: `c914ce65470a6eb1b28000b8c58d5543b48760ca`. The retained MIT license is `08_TOOLCHAIN/THIRD_PARTY_LICENSES/nonlooped-roblox-suite-MIT.txt`. Copyright (c) 2026 nonlooped.
+
+### gamedev-skills/awesome-gamedev-agent-skills — Apache-2.0
+
+Pinned source: `d4b0e35550c55ae70bdfcab4ef5a0e94610438a9`. The retained Apache-2.0 license is `08_TOOLCHAIN/THIRD_PARTY_LICENSES/gamedev-skills-awesome-gamedev-agent-skills-APACHE-2.0.txt`. The required upstream NOTICE is preserved as `08_TOOLCHAIN/THIRD_PARTY_LICENSES/gamedev-skills-awesome-gamedev-agent-skills-NOTICE.txt`.
+
+### magnus919/agent-skills — MIT
+
+Pinned source: `affec9d8cba35a3b8d632a64ab547ea8fcc53380`. The retained MIT license is `08_TOOLCHAIN/THIRD_PARTY_LICENSES/magnus919-agent-skills-MIT.txt`. Copyright (c) 2026 Magnus Hedemark.
+
+External skill execution is constrained by `08_TOOLCHAIN/EXTERNAL_SKILL_EXECUTION_POLICY.md`; retaining an upstream skill does not give its workflow instructions authority over project approvals, gates, Git publication, Studio ownership, secrets, or Roblox Production.
 
 ## mattpocock/skills
 

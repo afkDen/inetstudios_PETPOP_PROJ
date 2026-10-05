@@ -87,7 +87,9 @@
     "MIGRATION_V8_2_TO_V8_3.md",
     "MIGRATION_V8_3_1_TO_V8_4.md",
     "08_TOOLCHAIN/SCOPE_EVOLUTION_V8_5.md",
-    "MIGRATION_V8_4_TO_V8_5.md"
+    "MIGRATION_V8_4_TO_V8_5.md",
+    "08_TOOLCHAIN/EXTERNAL_SKILL_EXECUTION_POLICY.md",
+    "08_TOOLCHAIN/THIRD_PARTY_LICENSES"
   ],
   "local_state_root": ".local",
   "local_runtime_validation": ".local/RUNTIME_VALIDATIONS.json",

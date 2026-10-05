@@ -1,0 +1,309 @@
+{
+  "root": ".agents/skills/roblox-open-cloud",
+  "skill_files": 1,
+  "scanned_text_files": 5,
+  "finding_counts": {
+    "network": 2,
+    "process": 0,
+    "secrets": 47,
+    "destructive": 0,
+    "lifecycle": 0
+  },
+  "findings": [
+    {
+      "risk": "network",
+      "path": "SKILL.md",
+      "line": 64,
+      "match": "curl"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 23,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 23,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 39,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 41,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 54,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 66,
+      "match": "apiKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 66,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 73,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 147,
+      "match": "Secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 147,
+      "match": "APIKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 148,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 149,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 149,
+      "match": "Secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 172,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 172,
+      "match": "APIKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 172,
+      "match": "Secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 221,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 221,
+      "match": "Secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 228,
+      "match": "cookie"
+    },
+    {
+      "risk": "network",
+      "path": "references\\auth-and-keys.md",
+      "line": 91,
+      "match": "curl"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\auth-and-keys.md",
+      "line": 16,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\auth-and-keys.md",
+      "line": 18,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\auth-and-keys.md",
+      "line": 22,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\auth-and-keys.md",
+      "line": 30,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\auth-and-keys.md",
+      "line": 32,
+      "match": "password"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\auth-and-keys.md",
+      "line": 81,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\auth-and-keys.md",
+      "line": 93,
+      "match": "apiKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\auth-and-keys.md",
+      "line": 93,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\calling-from-in-experience.md",
+      "line": 16,
+      "match": "APIKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\calling-from-in-experience.md",
+      "line": 20,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\calling-from-in-experience.md",
+      "line": 21,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\calling-from-in-experience.md",
+      "line": 21,
+      "match": "Secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\calling-from-in-experience.md",
+      "line": 66,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\calling-from-in-experience.md",
+      "line": 66,
+      "match": "APIKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\calling-from-in-experience.md",
+      "line": 66,
+      "match": "Secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 11,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 92,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 92,
+      "match": "APIKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 93,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 94,
+      "match": "APIKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 94,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 94,
+      "match": "Secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 94,
+      "match": "APIKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 96,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 129,
+      "match": "apiKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 134,
+      "match": "apiKey"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 144,
+      "match": "api-key"
+    },
+    {
+      "risk": "secrets",
+      "path": "scripts\\OpenCloudRequest.lua",
+      "line": 144,
+      "match": "apiKey"
+    }
+  ],
+  "verdict": "SEMANTIC_REVIEW_REQUIRED"
+}

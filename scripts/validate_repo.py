@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,re,subprocess
 ROOT=Path(__file__).resolve().parents[1]
-REQ=['AGENTS.md','README.md','START_HERE.md','INITIALIZE_PROJECT.md','GAME_DESIGN.md','06_PROJECT_STATE/INITIALIZATION_STATUS.json','06_PROJECT_STATE/RUNTIME_VALIDATIONS.json','08_TOOLCHAIN/SKILL_REGISTRY.json','08_TOOLCHAIN/ROLE_CONTRACTS/roles.json','08_TOOLCHAIN/CAPABILITY_CONTRACT.json','08_TOOLCHAIN/RUNTIME_PROFILES.json','08_TOOLCHAIN/TEAM_MODEL_POLICY.json','08_TOOLCHAIN/MODEL_POLICY_SETUP.md','08_TOOLCHAIN/WORKFLOW_PROFILE.json','08_TOOLCHAIN/EXTERNAL_SKILLS.json','08_TOOLCHAIN/SKILL_AUDITS/README.md','scripts/team.py','scripts/streamlined_task.py','scripts/validate_streamlined_task.py','scripts/validate_ci_task.py','scripts/sync_runtime_adapters.py','scripts/sync_derived_docs.py','scripts/render_role_packet.py','scripts/validate_runtime.py','scripts/model_policy.py','scripts/prepare_codex_high.py','scripts/validate_model_policy.py','scripts/create_model_preflight.py','templates/TASK_TEMPLATE.md','templates/WORK_STATE_V8_TEMPLATE.md','templates/TASK_EVIDENCE_TEMPLATE.json','templates/MODEL_PREFLIGHT_TEMPLATE.json','TEAM_PROTOCOL.md','TEAM_ONBOARDING.md','08_TOOLCHAIN/TEAM_POLICY.json','scripts/validate_team.py','scripts/team_setup.py','scripts/submit_proposal.py','scripts/promote_proposal.py','scripts/team_workflow.py','default.project.json','rokit.toml','TEAM_WORKFLOW.md','02_TECHNICAL/LIVE_STUDIO_DELIVERY.md','08_TOOLCHAIN/QUALITY_SOURCE_CANDIDATES.md','scripts/validate_studio_delivery.py','scripts/prepare_studio_delivery.py','templates/STUDIO_DELIVERY_TEMPLATE.json','templates/rojo-world-opt-in.project.json','08_TOOLCHAIN/BLOXMAPS_INTEGRATION.json','08_TOOLCHAIN/BLOXMAPS_SETUP.md','scripts/bloxmaps_adapter.py','GLOSSARY.md','08_TOOLCHAIN/ENGINEERING_REASONING_V8_4.md','08_TOOLCHAIN/THIRD_PARTY_NOTICES.md','08_TOOLCHAIN/AGENT_ORCHESTRATION_V8_4.md','08_TOOLCHAIN/SCOPE_EVOLUTION_V8_5.md','MIGRATION_V8_4_TO_V8_5.md']
+REQ=['AGENTS.md','README.md','START_HERE.md','INITIALIZE_PROJECT.md','GAME_DESIGN.md','06_PROJECT_STATE/INITIALIZATION_STATUS.json','06_PROJECT_STATE/RUNTIME_VALIDATIONS.json','08_TOOLCHAIN/SKILL_REGISTRY.json','08_TOOLCHAIN/ROLE_CONTRACTS/roles.json','08_TOOLCHAIN/CAPABILITY_CONTRACT.json','08_TOOLCHAIN/RUNTIME_PROFILES.json','08_TOOLCHAIN/TEAM_MODEL_POLICY.json','08_TOOLCHAIN/MODEL_POLICY_SETUP.md','08_TOOLCHAIN/WORKFLOW_PROFILE.json','08_TOOLCHAIN/EXTERNAL_SKILLS.json','08_TOOLCHAIN/EXTERNAL_SKILL_EXECUTION_POLICY.md','08_TOOLCHAIN/THIRD_PARTY_LICENSES/README.md','08_TOOLCHAIN/SKILL_AUDITS/README.md','scripts/team.py','scripts/streamlined_task.py','scripts/validate_streamlined_task.py','scripts/validate_ci_task.py','scripts/sync_runtime_adapters.py','scripts/sync_derived_docs.py','scripts/render_role_packet.py','scripts/validate_runtime.py','scripts/model_policy.py','scripts/prepare_codex_high.py','scripts/validate_model_policy.py','scripts/create_model_preflight.py','templates/TASK_TEMPLATE.md','templates/WORK_STATE_V8_TEMPLATE.md','templates/TASK_EVIDENCE_TEMPLATE.json','templates/MODEL_PREFLIGHT_TEMPLATE.json','TEAM_PROTOCOL.md','TEAM_ONBOARDING.md','08_TOOLCHAIN/TEAM_POLICY.json','scripts/validate_team.py','scripts/team_setup.py','scripts/submit_proposal.py','scripts/promote_proposal.py','scripts/team_workflow.py','default.project.json','rokit.toml','TEAM_WORKFLOW.md','02_TECHNICAL/LIVE_STUDIO_DELIVERY.md','08_TOOLCHAIN/QUALITY_SOURCE_CANDIDATES.md','scripts/validate_studio_delivery.py','scripts/prepare_studio_delivery.py','templates/STUDIO_DELIVERY_TEMPLATE.json','templates/rojo-world-opt-in.project.json','08_TOOLCHAIN/BLOXMAPS_INTEGRATION.json','08_TOOLCHAIN/BLOXMAPS_SETUP.md','scripts/bloxmaps_adapter.py','GLOSSARY.md','08_TOOLCHAIN/ENGINEERING_REASONING_V8_4.md','08_TOOLCHAIN/THIRD_PARTY_NOTICES.md','08_TOOLCHAIN/AGENT_ORCHESTRATION_V8_4.md','08_TOOLCHAIN/SCOPE_EVOLUTION_V8_5.md','MIGRATION_V8_4_TO_V8_5.md']
 
 def fail(m): print('FAIL:',m); return 1
 def valid_skill(p):
@@ -72,6 +72,23 @@ def main():
  if (root/'.external_install_manifest.json').exists(): e+=fail('legacy external install manifest pollutes canonical skill root')
  if (ROOT/'08_TOOLCHAIN/FALLBACK_SKILLS').exists(): e+=fail('deprecated fallback skill tree still exists')
  ext=json.loads((ROOT/'08_TOOLCHAIN/EXTERNAL_SKILLS.json').read_text()); inst=ext.get('installer',{})
+ policy_rel=ext.get('execution_policy')
+ if policy_rel!='08_TOOLCHAIN/EXTERNAL_SKILL_EXECUTION_POLICY.md' or not (ROOT/policy_rel).is_file(): e+=fail('external skill execution policy missing or misconfigured')
+ elif policy_rel not in ag: e+=fail('AGENTS.md must point to the external skill execution policy')
+ policy=(ROOT/'08_TOOLCHAIN/EXTERNAL_SKILL_EXECUTION_POLICY.md').read_text(errors='replace') if (ROOT/'08_TOOLCHAIN/EXTERNAL_SKILL_EXECUTION_POLICY.md').exists() else ''
+ for token in ['not workflow authorities','not loosened merely to make the pipeline green','Production mutation','roblox-open-cloud','second sync bridge','not permission to copy']:
+  if token not in policy: e+=fail('external skill execution policy missing guardrail: '+token)
+ for src in ext.get('sources',[]):
+  if src.get('install')!='required': continue
+  lf=src.get('license_file',''); lp=ROOT/lf if lf else None
+  if not lf or not lp.is_file(): e+=fail(f"required external source license material missing: {src.get('name')}")
+  else:
+   lic=lp.read_text(encoding='utf-8',errors='replace')
+   declared=src.get('license')
+   if declared=='MIT' and 'MIT License' not in lic: e+=fail(f"MIT license text missing for external source: {src.get('name')}")
+   if declared=='Apache-2.0' and ('Apache License' not in lic or 'Version 2.0' not in lic): e+=fail(f"Apache-2.0 license text missing for external source: {src.get('name')}")
+  nf=src.get('notice_file')
+  if nf and not (ROOT/nf).is_file(): e+=fail(f"required external source NOTICE missing: {src.get('name')}")
  if inst.get('agent')!='universal' or inst.get('canonical_destination')!='.agents/skills' or inst.get('scope')!='project' or inst.get('method')!='copy': e+=fail('external installer is not canonical universal project copy')
  expected_external={n for src in ext['sources'] if src.get('install')=='required' for n in src['skills']}
  registry_external={n for n,v in regskills.items() if v.get('origin')=='external'}
@@ -81,15 +98,29 @@ def main():
   from initialize_project import treehash
   lock=json.loads(lock_path.read_text())
   source_by_name={n:s for s in lock.get('sources',[]) for n in s.get('skills',[])}
+  configured_by_name={n:s for s in ext['sources'] if s.get('install')=='required' for n in s.get('skills',[])}
   hashes=lock.get('skill_tree_sha256',{})
   if set(hashes)!=expected_external or set(source_by_name)!=expected_external:e+=fail('external skill lock/config mismatch')
-  for n in expected_external & set(regskills) & set(hashes) & set(source_by_name):
-   item=regskills[n]; source=source_by_name[n]
-   if (item.get('state')!='locked' or item.get('trust')!='semantic-review-approved' or
-       item.get('source')!=source.get('repository') or item.get('license')!=source.get('declared_license') or
-       item.get('source_commit')!=source.get('verified_source_commit') or item.get('tree_sha256')!=hashes[n]):
-    e+=fail(f'external skill registry/lock provenance mismatch: {n}')
+  for n in expected_external & set(regskills) & set(hashes) & set(source_by_name) & set(configured_by_name):
+   item=regskills[n]; source=source_by_name[n]; configured=configured_by_name[n]
+   ref=str(configured.get('ref',''))
+   if not sha40.fullmatch(ref): e+=fail(f'external skill source ref is not immutable: {n}')
+   if (source.get('repository')!=configured.get('repository') or source.get('ref')!=ref or
+       source.get('declared_license')!=configured.get('license')):
+    e+=fail(f'external skill lock/config provenance mismatch: {n}')
+   # The registry is the static catalog/policy declaration. Per-checkout lock hashes and
+   # semantic-review approval live in SKILL_LOCK.json + INITIALIZATION_STATUS.json; do
+   # not require impossible per-install mutation of the committed registry here.
+   if (item.get('origin')!='external' or item.get('state')!='installed-during-initialization' or
+       item.get('trust')!='requires-hash-and-semantic-review' or
+       item.get('source')!=configured.get('repository') or item.get('license')!=configured.get('license')):
+    e+=fail(f'external skill registry/config provenance mismatch: {n}')
    if (root/n/'SKILL.md').exists() and treehash(root/n)!=hashes[n]:e+=fail(f'external skill tree drift: {n}')
+ try:
+  owned=set(json.loads((ROOT/'08_TOOLCHAIN/TEAM_POLICY.json').read_text()).get('integrator_owned',[]))
+  for rel in ['08_TOOLCHAIN/EXTERNAL_SKILL_EXECUTION_POLICY.md','08_TOOLCHAIN/THIRD_PARTY_LICENSES']:
+   if rel not in owned: e+=fail('external skill trust surface must be integration-owned: '+rel)
+ except (OSError,ValueError,TypeError): e+=fail('team policy unreadable while checking external skill trust surfaces')
  bundled={p.parent.name for p in root.glob('*/SKILL.md')}
  for n in bundled:
   if regskills[n].get('origin')=='project' and regskills[n].get('state')!='bundled': e+=fail(f'project skill {n} is present but registry state is not bundled')

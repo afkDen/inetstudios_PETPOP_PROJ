@@ -1,0 +1,87 @@
+{
+  "root": ".agents/skills/roblox-rojo",
+  "skill_files": 1,
+  "scanned_text_files": 5,
+  "finding_counts": {
+    "network": 0,
+    "process": 0,
+    "secrets": 11,
+    "destructive": 0,
+    "lifecycle": 1
+  },
+  "findings": [
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 127,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 128,
+      "match": "api_key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\installation-and-cli.md",
+      "line": 71,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\installation-and-cli.md",
+      "line": 71,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\installation-and-cli.md",
+      "line": 71,
+      "match": "api_key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\installation-and-cli.md",
+      "line": 110,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\installation-and-cli.md",
+      "line": 110,
+      "match": "api_key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\installation-and-cli.md",
+      "line": 112,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\workflows-and-syncback.md",
+      "line": 25,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\workflows-and-syncback.md",
+      "line": 115,
+      "match": "api_key"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\workflows-and-syncback.md",
+      "line": 116,
+      "match": "secret"
+    },
+    {
+      "risk": "lifecycle",
+      "path": "references\\workflows-and-syncback.md",
+      "line": 29,
+      "match": "Prepare"
+    }
+  ],
+  "verdict": "SEMANTIC_REVIEW_REQUIRED"
+}

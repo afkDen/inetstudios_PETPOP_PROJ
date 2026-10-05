@@ -1,0 +1,177 @@
+{
+  "root": ".agents/skills/qa-methodology",
+  "skill_files": 1,
+  "scanned_text_files": 34,
+  "finding_counts": {
+    "network": 0,
+    "process": 5,
+    "secrets": 16,
+    "destructive": 6,
+    "lifecycle": 0
+  },
+  "findings": [
+    {
+      "risk": "secrets",
+      "path": "references\\agentic-eval-design.md",
+      "line": 33,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\agentic-eval-design.md",
+      "line": 142,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\ai-code-quality-gates.md",
+      "line": 149,
+      "match": "password"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\ai-code-quality-gates.md",
+      "line": 154,
+      "match": "password"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\ai-code-quality-gates.md",
+      "line": 154,
+      "match": "password"
+    },
+    {
+      "risk": "process",
+      "path": "references\\ci-failure-triage.md",
+      "line": 79,
+      "match": "bash -c"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\sdet-engineering.md",
+      "line": 148,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\security-testing.md",
+      "line": 7,
+      "match": "Secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\security-testing.md",
+      "line": 27,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\security-testing.md",
+      "line": 79,
+      "match": "cookie"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\security-testing.md",
+      "line": 79,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\security-testing.md",
+      "line": 136,
+      "match": "Secret"
+    },
+    {
+      "risk": "destructive",
+      "path": "references\\security-testing.md",
+      "line": 25,
+      "match": "rm -rf"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\test-data-management.md",
+      "line": 138,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\test-design-techniques.md",
+      "line": 146,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\test-strategy.md",
+      "line": 98,
+      "match": "password"
+    },
+    {
+      "risk": "process",
+      "path": "tests\\test_check_ac_testability.py",
+      "line": 10,
+      "match": "subprocess"
+    },
+    {
+      "risk": "process",
+      "path": "tests\\test_check_ac_testability.py",
+      "line": 22,
+      "match": "subprocess"
+    },
+    {
+      "risk": "secrets",
+      "path": "tests\\test_check_ac_testability.py",
+      "line": 99,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "tests\\test_check_ac_testability.py",
+      "line": 100,
+      "match": "credentials"
+    },
+    {
+      "risk": "destructive",
+      "path": "tests\\test_check_ac_testability.py",
+      "line": 215,
+      "match": "unlink("
+    },
+    {
+      "risk": "destructive",
+      "path": "tests\\test_check_ac_testability.py",
+      "line": 234,
+      "match": "unlink("
+    },
+    {
+      "risk": "process",
+      "path": "tests\\test_risk_prioritize.py",
+      "line": 11,
+      "match": "subprocess"
+    },
+    {
+      "risk": "process",
+      "path": "tests\\test_risk_prioritize.py",
+      "line": 23,
+      "match": "subprocess"
+    },
+    {
+      "risk": "destructive",
+      "path": "tests\\test_risk_prioritize.py",
+      "line": 259,
+      "match": "unlink("
+    },
+    {
+      "risk": "destructive",
+      "path": "tests\\test_risk_prioritize.py",
+      "line": 282,
+      "match": "unlink("
+    },
+    {
+      "risk": "destructive",
+      "path": "tests\\test_risk_prioritize.py",
+      "line": 303,
+      "match": "unlink("
+    }
+  ],
+  "verdict": "SEMANTIC_REVIEW_REQUIRED"
+}

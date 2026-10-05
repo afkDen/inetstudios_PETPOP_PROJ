@@ -93,13 +93,14 @@ These sources are **not auto-installed** by ordinary project setup. v8.2 ships p
 ## Installation security policy
 
 1. Project scope only. Never install bootstrap skills globally.
-2. Install only repositories and skill names listed in `EXTERNAL_SKILLS.json`.
-3. Use copied installs so the initialized repository remains self-contained.
-4. Run conservative static auditing for every managed skill and retain reports under `08_TOOLCHAIN/SKILL_AUDITS/`.
-5. Static findings never count as approval. Destructive/lifecycle/process/secret/network findings require explicit semantic adjudication before the supply-chain review gate may be marked PASS.
-6. Record a hash of each complete installed skill tree (paths, file contents, symlink targets, and structure) in `08_TOOLCHAIN/SKILL_LOCK.json`; hashing only `SKILL.md` is insufficient.
-7. Require a fresh semantic supply-chain review for the exact skill-lock digest before readiness. Static scanning is a prefilter, not approval.
-8. Quarantine any managed skill set whose provenance is missing, whose tree drifts from the reviewed lock, or whose installation is partial; then reinstall from the approved source set before review.
-9. Normal project sessions never silently update these skills; drift is restored from the committed reviewed lock. New upstream content is resolved only through explicit `--refresh-external-skills`, then reviewed, tested, and committed separately.
+2. External skill execution is always subordinate to `08_TOOLCHAIN/EXTERNAL_SKILL_EXECUTION_POLICY.md` and the canonical project contract; reviewed upstream text is capability guidance, not workflow/release authority.
+3. Install only repositories and skill names listed in `EXTERNAL_SKILLS.json`.
+4. Use copied installs so the initialized repository remains self-contained.
+5. Run conservative static auditing for every managed skill and retain reports under `08_TOOLCHAIN/SKILL_AUDITS/`.
+6. Static findings never count as approval. Destructive/lifecycle/process/secret/network findings require explicit semantic adjudication before the supply-chain review gate may be marked PASS.
+7. Record a hash of each complete installed skill tree (paths, file contents, symlink targets, and structure) in `08_TOOLCHAIN/SKILL_LOCK.json`; hashing only `SKILL.md` is insufficient.
+8. Require a fresh semantic supply-chain review for the exact skill-lock digest before readiness. Static scanning is a prefilter, not approval.
+9. Quarantine any managed skill set whose provenance is missing, whose tree drifts from the reviewed lock, or whose installation is partial; then reinstall from the approved source set before review.
+10. Normal project sessions never silently update these skills; drift is restored from the committed reviewed lock. New upstream content is resolved only through explicit `--refresh-external-skills`, then reviewed, tested, and committed separately.
 
 There is deliberately **no second fallback skill tree**. If a required upstream skill cannot be installed and verified, that readiness gate remains blocked. This avoids shadow copies, name collisions, and divergent procedures. Project-authored skills that are truly part of the system live directly in `.agents/skills/` under their own stable names.

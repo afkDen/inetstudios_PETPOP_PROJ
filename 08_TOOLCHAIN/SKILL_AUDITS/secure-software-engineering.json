@@ -1,0 +1,225 @@
+{
+  "root": ".agents/skills/secure-software-engineering",
+  "skill_files": 1,
+  "scanned_text_files": 18,
+  "finding_counts": {
+    "network": 0,
+    "process": 0,
+    "secrets": 35,
+    "destructive": 0,
+    "lifecycle": 0
+  },
+  "findings": [
+    {
+      "risk": "secrets",
+      "path": "README.md",
+      "line": 7,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "README.md",
+      "line": 35,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 33,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 46,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 67,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "SKILL.md",
+      "line": 68,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "evals\\evals.json",
+      "line": 20,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "evals\\evals.json",
+      "line": 20,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "evals\\evals.json",
+      "line": 25,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "evals\\evals.json",
+      "line": 44,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "evals\\evals.json",
+      "line": 48,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\ai-llm-security.md",
+      "line": 23,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\authentication-authorization.md",
+      "line": 5,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\authentication-authorization.md",
+      "line": 10,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\authentication-authorization.md",
+      "line": 13,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\authentication-authorization.md",
+      "line": 17,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\multi-tenant-isolation.md",
+      "line": 32,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\multi-tenant-isolation.md",
+      "line": 80,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\multi-tenant-isolation.md",
+      "line": 87,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\multi-tenant-isolation.md",
+      "line": 110,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\multi-tenant-isolation.md",
+      "line": 123,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secrets-lifecycle.md",
+      "line": 5,
+      "match": "token"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secrets-lifecycle.md",
+      "line": 5,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secrets-lifecycle.md",
+      "line": 9,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secrets-lifecycle.md",
+      "line": 10,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secrets-lifecycle.md",
+      "line": 11,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secrets-lifecycle.md",
+      "line": 17,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secrets-lifecycle.md",
+      "line": 21,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secure-code-review.md",
+      "line": 18,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secure-logging-audit.md",
+      "line": 10,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secure-logging-audit.md",
+      "line": 17,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\secure-logging-audit.md",
+      "line": 22,
+      "match": "secret"
+    },
+    {
+      "risk": "secrets",
+      "path": "references\\security-requirements-threat-modeling.md",
+      "line": 9,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "templates\\secure-code-review-checklist.md",
+      "line": 31,
+      "match": "credentials"
+    },
+    {
+      "risk": "secrets",
+      "path": "templates\\security-acceptance-criteria.md",
+      "line": 33,
+      "match": "secret"
+    }
+  ],
+  "verdict": "SEMANTIC_REVIEW_REQUIRED"
+}
