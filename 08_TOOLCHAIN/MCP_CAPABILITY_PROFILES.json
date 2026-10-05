@@ -1,0 +1,57 @@
+{
+  "schema_version": 3,
+  "default_policy": "discover on demand; no silent install; official/reviewed source pins; least privilege; target verification before mutations; evidence for writes",
+  "profiles": {
+    "roblox-studio": {
+      "state": "recommended",
+      "provider": "Roblox built-in Studio MCP server",
+      "source": "https://create.roblox.com/docs/studio/mcp",
+      "roles": [
+        "studio-operator"
+      ],
+      "install_requires_human_approval": false,
+      "connection_requires_target_verification": true,
+      "notes": "Primary live Roblox bridge. Verify nonproduction place/universe and writer ownership before mutation."
+    },
+    "graphify": {
+      "state": "recommended",
+      "provider": "Graphify local repository knowledge graph CLI; MCP transport optional",
+      "package": "graphifyy==0.9.74",
+      "source_repository": "Graphify-Labs/graphify",
+      "source_ref": "e10df08877f8819a625a1afa38c3297a31fda296",
+      "license": "Apache-2.0",
+      "roles": [
+        "lead-orchestrator"
+      ],
+      "install_requires_human_approval": true,
+      "connection_requires_target_verification": false,
+      "default_mode": "code-only local extraction; update after pull/merge; query before broad repo scans",
+      "notes": "Repository intelligence/memory augmentation, not authority. Default install omits the MCP extra because the bootstrap uses the CLI directly, reducing dependencies and tool context. Code-only mapping is local and deterministic; Graphify MCP transport and semantic docs/media extraction are opt-in capabilities."
+    },
+    "blender": {
+      "state": "priority-for-asset-authoring",
+      "provider": "local Blender + MCP for Blender",
+      "package": "mcp-for-blender==2.1.3",
+      "source_repository": "ahujasid/mcp-for-blender",
+      "source_ref": "60d2a31b4632a7bc178f3dd636f7e68dfb5c8ae4",
+      "license": "MIT",
+      "roles": [
+        "content-production-worker"
+      ],
+      "install_requires_human_approval": true,
+      "connection_requires_target_verification": true,
+      "prerequisites": {
+        "blender": ">=4.2",
+        "python": ">=3.10",
+        "installer": "uv tool (preferred) or pipx"
+      },
+      "notes": "Priority path for Blender-suitable 3D assets. High-privilege authoring surface: it can execute Python inside Blender. Bootstrap default is localhost + safe mode + telemetry disabled. Verify target blend/scene/collection and export path, then use measured gates and round-trip validation. Disabling safe mode or enabling network/paid asset providers requires an explicit human decision.",
+      "runtime_defaults": {
+        "BLENDER_MCP_SAFE_MODE": "1",
+        "DISABLE_TELEMETRY": "true",
+        "BLENDER_HOST": "localhost"
+      }
+    }
+  },
+  "external_capability_note": "BloxMaps is a pinned external production capability, not an MCP. See 08_TOOLCHAIN/BLOXMAPS_INTEGRATION.json."
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 2,
+  "issue": 123,
+  "scope_revision": 0,
+  "status": "PENDING",
+  "operator": "",
+  "git_commit": "",
+  "target": {
+    "name": "",
+    "studio_instance_id": "",
+    "place_id": null,
+    "human_confirmed": false
+  },
+  "mcp": {
+    "selected_client": "",
+    "connected": false,
+    "probes": {},
+    "raw_probe_evidence": ""
+  },
+  "rojo": {
+    "project": "default.project.json",
+    "source_commit": "",
+    "serve_command": "rojo serve default.project.json",
+    "plugin_connected": false,
+    "managed_path": "",
+    "marker_proof": ""
+  },
+  "playtest": {
+    "started_and_stopped": false,
+    "scenario": "",
+    "observed_result": "",
+    "console": "",
+    "screenshot": "",
+    "input_trace": ""
+  },
+  "human_verification": {
+    "reviewer": "",
+    "reference": ""
+  }
+}

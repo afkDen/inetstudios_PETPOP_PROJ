@@ -1,0 +1,79 @@
+{
+  "schema_version": 3,
+  "policy": "Install copied external skills only into canonical .agents/skills from reviewed immutable Git refs; whole-tree hash + static/semantic review. No global skill installs and no floating upstream refs.",
+  "sources": [
+    {
+      "name": "roblox-suite",
+      "repository": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "install": "required",
+      "skills": [
+        "roblox",
+        "roblox-core",
+        "roblox-networking",
+        "roblox-datastores",
+        "roblox-user-interfaces",
+        "roblox-animation",
+        "roblox-vfx",
+        "roblox-audio",
+        "roblox-physics",
+        "roblox-npcs",
+        "roblox-gamepasses",
+        "roblox-open-cloud",
+        "roblox-teleport",
+        "roblox-testing",
+        "roblox-mcp",
+        "roblox-rojo"
+      ],
+      "ref": "c914ce65470a6eb1b28000b8c58d5543b48760ca"
+    },
+    {
+      "name": "gamedev-disciplines",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "install": "required",
+      "skills": [
+        "router",
+        "create-game-assets",
+        "game-ai",
+        "ai-behavior-trees-utility-ai",
+        "procedural-gen",
+        "dialogue-systems",
+        "save-systems",
+        "audio-design",
+        "shader-programming",
+        "physics-tuning",
+        "level-design",
+        "input-systems",
+        "game-feel",
+        "camera-systems",
+        "game-ui-ux",
+        "performance-optimization",
+        "roblox-studio-workflow"
+      ],
+      "ref": "d4b0e35550c55ae70bdfcab4ef5a0e94610438a9"
+    },
+    {
+      "name": "engineering-quality",
+      "repository": "magnus919/agent-skills",
+      "license": "MIT",
+      "install": "required",
+      "skills": [
+        "qa-methodology",
+        "secure-software-engineering",
+        "technical-documentation",
+        "adr-authoring"
+      ],
+      "ref": "affec9d8cba35a3b8d632a64ab547ea8fcc53380"
+    }
+  ],
+  "installer": {
+    "package": "skills",
+    "version": "1.5.26",
+    "agent": "universal",
+    "method": "copy",
+    "scope": "project",
+    "telemetry": "disabled",
+    "canonical_destination": ".agents/skills"
+  }
+}

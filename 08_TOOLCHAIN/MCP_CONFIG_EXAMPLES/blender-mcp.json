@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "blender": {
+      "command": "mcp-for-blender",
+      "env": {
+        "BLENDER_HOST": "localhost",
+        "BLENDER_MCP_SAFE_MODE": "1",
+        "DISABLE_TELEMETRY": "true"
+      }
+    }
+  }
+}

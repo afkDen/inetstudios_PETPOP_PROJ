@@ -1,0 +1,57 @@
+name: Roblox project checks
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: roblox-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  portable-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Static repository contract
+        run: |
+          python scripts/sync_derived_docs.py --check
+          python scripts/validate_model_policy.py --check-config
+          python scripts/validate_repo.py
+          python scripts/validate_team.py
+          python scripts/validate_rojo_layout.py
+      - name: Unit tests and disposable pipeline
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/disposable_pipeline_test.py
+      - name: PR immutability and risk-aware task gates
+        if: github.event_name == 'pull_request'
+        run: |
+          python scripts/validate_team.py --compare origin/main
+          python scripts/validate_ci_task.py --compare origin/main
+      - name: Install reviewed Roblox toolchain
+        uses: paradoxum-games/setup-rokit@v3
+        with:
+          cache: true
+          version: 1.2.0
+      - name: Native Rojo build
+        run: |
+          mkdir -p build
+          python scripts/bootstrap_dev_tools.py --check
+          rojo build default.project.json --output build/ci.rbxlx
+      - name: Luau formatting and lint
+        run: |
+          if find src -type f \( -name "*.luau" -o -name "*.lua" \) | grep -q .; then
+            stylua --check src
+            selene src
+          else
+            echo "No Luau source yet"
+          fi

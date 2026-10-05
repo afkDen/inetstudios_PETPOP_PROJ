@@ -1,0 +1,42 @@
+{
+  "name": "inetstudios_PETPOP_PROJ",
+  "globIgnorePaths": [
+    "**/.gitkeep",
+    "**/.DS_Store"
+  ],
+  "tree": {
+    "$className": "DataModel",
+    "$ignoreUnknownInstances": true,
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$ignoreUnknownInstances": true,
+      "GameShared": {
+        "$className": "Folder",
+        "$path": "src/shared",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$ignoreUnknownInstances": true,
+      "GameServer": {
+        "$className": "Folder",
+        "$path": "src/server",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "$ignoreUnknownInstances": true,
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$ignoreUnknownInstances": true,
+        "GameClient": {
+          "$className": "Folder",
+          "$path": "src/client",
+          "$ignoreUnknownInstances": true
+        }
+      }
+    }
+  }
+}

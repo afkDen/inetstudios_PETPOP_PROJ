@@ -1,0 +1,39 @@
+{
+  "schema_version": 2,
+  "project_status": "INITIALIZATION_REQUIRED",
+  "checks": {
+    "repository_structure": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    },
+    "git": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    },
+    "canonical_skills": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    },
+    "external_skills": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    },
+    "skill_supply_chain_review": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    },
+    "local_tests": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    },
+    "free_tool_probe": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    },
+    "credential_policy": {
+      "status": "NOT_RUN",
+      "evidence": ""
+    }
+  },
+  "last_updated": null
+}

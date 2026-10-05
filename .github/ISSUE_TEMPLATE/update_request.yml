@@ -1,0 +1,20 @@
+name: Game update
+description: Request a feature, fix, balance change or content update.
+title: "[UPDATE] "
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: Requested update
+      placeholder: "Add fear combos..."
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Constraints / prohibited changes
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: What would make this feel done?
+      description: Optional; the Lead will refine this into acceptance criteria.

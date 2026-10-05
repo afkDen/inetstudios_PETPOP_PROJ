@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "fallback_profile": "generic",
+  "profiles": {
+    "generic": {
+      "skill_source": ".agents/skills",
+      "adapter_strategy": "role-packets",
+      "mode_hint": "FULL_EMULATED",
+      "requires_direct_validation": true
+    },
+    "antigravity": {
+      "skill_source": ".agents/skills",
+      "adapter_strategy": "generated-native-agents",
+      "mode_hint": "FULL_NATIVE",
+      "requires_direct_validation": true
+    },
+    "codex": {
+      "skill_source": ".agents/skills",
+      "adapter_strategy": "AGENTS.md + generated project-scoped custom agent TOML; portable role packets as fallback",
+      "mode_hint": "FULL_EMULATED",
+      "requires_direct_validation": true
+    },
+    "gemini-cli": {
+      "skill_source": ".agents/skills",
+      "adapter_strategy": "GEMINI.md + generated-native-agents",
+      "mode_hint": "FULL_NATIVE",
+      "requires_direct_validation": true
+    },
+    "cursor": {
+      "skill_source": ".agents/skills",
+      "adapter_strategy": "AGENTS.md + generated-native-agents",
+      "mode_hint": "FULL_NATIVE",
+      "requires_direct_validation": true
+    },
+    "github-copilot": {
+      "skill_source": ".agents/skills",
+      "adapter_strategy": "AGENTS.md + generated-agents",
+      "mode_hint": "FULL_NATIVE",
+      "requires_direct_validation": true
+    },
+    "claude-code": {
+      "skill_source": ".agents/skills",
+      "runtime_skill_mirror": ".claude/skills",
+      "adapter_strategy": "CLAUDE.md + generated-agents + skill mirror",
+      "mode_hint": "FULL_NATIVE",
+      "requires_direct_validation": true
+    },
+    "openai-agents-api": {
+      "skill_source": ".agents/skills",
+      "adapter_strategy": "programmatic role packets/hosted skills",
+      "mode_hint": "FULL_NATIVE",
+      "requires_direct_validation": true
+    }
+  }
+}

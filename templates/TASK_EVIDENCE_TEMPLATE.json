@@ -1,0 +1,28 @@
+{
+  "schema_version": 2,
+  "issue": 0,
+  "risk": "STANDARD",
+  "scope_revision": 0,
+  "required_scope_revision": 0,
+  "scope_attestation": {},
+  "status": "DRAFT",
+  "native_build": {
+    "status": "PENDING",
+    "evidence": ""
+  },
+  "studio": {
+    "status": "NOT_APPLICABLE",
+    "reason": "",
+    "receipt": ""
+  },
+  "independent_review": {
+    "status": "PENDING",
+    "reviewer": "",
+    "report": ""
+  },
+  "human_review": {
+    "status": "PENDING",
+    "reference": ""
+  },
+  "notes": []
+}

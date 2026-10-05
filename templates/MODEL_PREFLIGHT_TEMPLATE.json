@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "WORK_IN_PROGRESS",
+  "runtime_key": "",
+  "runtime": "",
+  "developer": "",
+  "policy_sha256": "",
+  "selected_model": "",
+  "available_efforts_observed": [],
+  "main_observation": {
+    "model": "",
+    "effort": "",
+    "evidence_file": "",
+    "evidence_sha256": ""
+  },
+  "delegated_observations": [
+    {
+      "role": "implementation-worker",
+      "model": "",
+      "effort": "",
+      "evidence_file": "",
+      "evidence_sha256": ""
+    },
+    {
+      "role": "assurance-reviewer",
+      "model": "",
+      "effort": "",
+      "evidence_file": "",
+      "evidence_sha256": ""
+    }
+  ],
+  "human_verification": {
+    "confirmed_by": "",
+    "confirmed_same_model": false,
+    "confirmed_reasoning_limits": false
+  },
+  "notes": "Evidence paths must point to local sanitized CLI/IDE or tool observations. Generated config by itself never proves a model was used. If a runtime cannot expose per-agent settings, mark planning-only/emulated or block until tested."
+}

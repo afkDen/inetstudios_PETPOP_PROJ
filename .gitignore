@@ -1,0 +1,79 @@
+# Secrets
+.env.local
+.env
+*.pem
+*.key
+*.p12
+
+# Generated runtime adapters / local runtime noise
+.agents/agents/
+.agents/mcp_config.json
+.claude/agents/
+.claude/skills/
+.gemini/agents/
+.gemini/settings.local.json
+.cursor/agents/
+.github/agents/
+.runtime_generated/
+.system_generated/
+.antigravity/
+*.local.md
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Roblox / build outputs
+*.rbxl.lock
+*.rbxlx.lock
+build/
+dist/
+out/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Scratch
+.tmp/
+scratch/
+
+# Local quarantine for untrusted/drifted third-party skills (never activated or committed)
+08_TOOLCHAIN/SKILL_QUARANTINE/
+
+# Every teammate's runtime/model/workstation metadata, tool evidence and temporary worktrees
+.local/
+.worktrees/
+
+# Rojo/IDE local generated outputs
+sourcemap.json
+*.rbxlx.lock
+*.rbxm.lock
+
+# Generated Codex runtime adapters: project instructions/role contracts are canonical
+.codex/agents/
+.codex/config.toml
+
+# Portable bootstrap distribution (not game state)
+.bootstrap_private/
+
+# v8.2 local repository intelligence / workstation evidence
+graphify-out/
+graph.json
+.graphify/
+.local/WORKSTATION_DOCTOR.json
+.local/WORKSTATION_FIX_PLAN.txt

@@ -1,0 +1,27 @@
+{
+  "schema_version": 3,
+  "capabilities": {
+    "repo.read": "Read/list/search repository files",
+    "repo.write": "Create/edit repository files within assigned scope",
+    "exec.local": "Run approved local commands/tests",
+    "git": "Inspect/stage/commit/tag/version repository",
+    "web.search": "Search/read public web information when needed",
+    "context.isolate": "Execute work in a fresh context independent of implementer context",
+    "agent.delegate": "Delegate a role/task to another isolated worker",
+    "skills.consume": "Discover and activate canonical Agent Skills",
+    "model.select": "Select/bind an appropriate model/reasoning configuration",
+    "mcp.client": "Connect to approved MCP servers or equivalent tool bridges",
+    "roblox.studio": "Inspect/mutate/test Roblox Studio through approved bridge",
+    "image.generate": "Generate/edit images when asset work requires it",
+    "image.inspect": "Inspect actual image pixels/screenshots/reference frames; not satisfied by filenames, text summaries or generated placeholders",
+    "decision.ask": "Pause affected work and request a material human decision with options/recommendation",
+    "memory.curate": "Read/write compact durable task/project memory artifacts and handoff capsules",
+    "design.visual": "Use an actual visual-design workspace/image inspection/generation capability when available",
+    "blender.author": "Create or modify Blender assets through an approved local Blender tool/MCP profile",
+    "vfx.author": "Create/tune game VFX through approved Roblox/authoring tools",
+    "audio.author": "Create/edit/integrate game audio through approved local/source tools",
+    "repo.graph": "Query/update approved local Graphify project graph for repository topology/impact intelligence; canonical repo/Git/task state remains authoritative",
+    "world.plan": "Produce/review deterministic world/layout plans through an approved generator such as the pinned BloxMaps adapter.",
+    "ui.blueprint": "Produce/review declarative UI blueprints/prototypes through an approved runtime-neutral UI accelerator; not a mandatory frontend framework."
+  }
+}

@@ -1,0 +1,6 @@
+# Local/generated state that should not invalidate Claude prompt caches.
+graphify-out/
+graph.json
+.graphify/
+.local/
+build/

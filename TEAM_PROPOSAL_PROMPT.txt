@@ -1,0 +1,8 @@
+# LEGACY v7 COMPATIBILITY ONLY
+
+For new v8 work do not use a separate proposal branch/PR. Use:
+
+  python scripts/team.py idea --file PATH --owner USER
+  python scripts/team.py update --file PATH --owner USER
+
+This file remains only so older repositories/history can still reference the v7 proposal workflow. A maintainer may deliberately use the legacy scripts for migration, but the normal v8 path is one Issue + one task branch + one implementation PR.

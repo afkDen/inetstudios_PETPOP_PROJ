@@ -1,0 +1,89 @@
+{
+  "schema_version": 3,
+  "policy": "read-only doctor by default; exact project tool pins; isolated uv-tool installs preferred with pipx fallback; no silent system package manager or GUI application installs",
+  "profiles": {
+    "core": {
+      "required": [
+        {
+          "id": "git",
+          "command": "git",
+          "version": "any"
+        },
+        {
+          "id": "python",
+          "command": "python",
+          "version": ">=3.10"
+        },
+        {
+          "id": "node",
+          "command": "node",
+          "version": "recommended >=20 for initial external-skill resolution only"
+        },
+        {
+          "id": "npx",
+          "command": "npx",
+          "version": "required only for first/explicit external-skill refresh"
+        },
+        {
+          "id": "rokit",
+          "command": "rokit",
+          "version": "required for pinned Rojo/StyLua/Selene install"
+        },
+        {
+          "id": "rojo",
+          "command": "rojo",
+          "version": "7.7.0"
+        },
+        {
+          "id": "stylua",
+          "command": "stylua",
+          "version": "2.5.2"
+        },
+        {
+          "id": "selene",
+          "command": "selene",
+          "version": "0.31.0"
+        }
+      ]
+    },
+    "graphify": {
+      "recommended": true,
+      "package": "graphifyy==0.9.74",
+      "optional_mcp_package": "graphifyy[mcp]==0.9.74",
+      "command": "graphify",
+      "python": ">=3.10",
+      "installer": "uv tool (preferred) or pipx",
+      "source_ref": "e10df08877f8819a625a1afa38c3297a31fda296",
+      "source_repository": "Graphify-Labs/graphify"
+    },
+    "blender": {
+      "recommended_for": "3D asset authoring",
+      "blender": ">=4.2",
+      "package": "mcp-for-blender==2.1.3",
+      "command": "mcp-for-blender",
+      "python": ">=3.10",
+      "installer": "uv tool (preferred) or pipx",
+      "source_ref": "60d2a31b4632a7bc178f3dd636f7e68dfb5c8ae4",
+      "addon_install": "mcp-for-blender install-addon",
+      "manual_live_step": "enable Interface: MCP for Blender and verify the local addon/server connection",
+      "source_repository": "ahujasid/mcp-for-blender",
+      "runtime_defaults": {
+        "BLENDER_MCP_SAFE_MODE": "1",
+        "DISABLE_TELEMETRY": "true",
+        "BLENDER_HOST": "localhost"
+      }
+    },
+    "bloxmaps": {
+      "recommended_for": "procedural world/layout generation and optional UI blueprint acceleration",
+      "repository": "afkDen/bloxmaps",
+      "ref": "40917c59954a3586634641306482031ab128a007",
+      "license": "FSL-1.1-ALv2",
+      "checkout": ".local/tools/bloxmaps",
+      "python": ">=3.11",
+      "luau": "required for MapGen",
+      "lune": "optional; only local BloxUI server paths",
+      "installer": "explicit git clone/checkout through scripts/bloxmaps_adapter.py install --confirm",
+      "notes": "isolated checkout; never downgrades game project Rojo pin or vendors FSL source into game repository"
+    }
+  }
+}

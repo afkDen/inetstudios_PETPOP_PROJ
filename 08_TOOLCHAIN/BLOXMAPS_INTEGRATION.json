@@ -1,0 +1,89 @@
+{
+  "schema_version": 2,
+  "integration_id": "bloxmaps-production-adapter-v1",
+  "state": "priority-world-generation-optional-ui-accelerator",
+  "license": "FSL-1.1-ALv2",
+  "license_note": "Source-available Fair Source. Keep the source isolated in its own checkout/fork; do not vendor it into generated game repos. Each upstream release becomes Apache-2.0 after two years according to its LICENSE.",
+  "fork": {
+    "repository": "afkDen/bloxmaps",
+    "ref": "40917c59954a3586634641306482031ab128a007",
+    "default_branch": "main"
+  },
+  "upstream": {
+    "repository": "OwenStringer/bloxmaps",
+    "ref": "40917c59954a3586634641306482031ab128a007"
+  },
+  "checkout": {
+    "default_path": ".local/tools/bloxmaps",
+    "tracked": false,
+    "must_be_clean_for_upgrade": true,
+    "must_be_clean_for_execution": true
+  },
+  "components": {
+    "mapgen": {
+      "state": "priority",
+      "use": "deterministic prompt/seed -> reviewable map plan"
+    },
+    "studio_map_builder": {
+      "state": "approved-on-demand",
+      "use": "build accepted plans in a verified nonproduction Studio target"
+    },
+    "asset_pipeline": {
+      "state": "priority",
+      "use": "validated model/icon packs and manifests; bridge Blender-authored assets into procedural worlds"
+    },
+    "world_sections": {
+      "state": "approved-on-demand",
+      "use": "large multi-section worlds and expansion"
+    },
+    "browser_preview": {
+      "state": "optional",
+      "use": "pre-Studio visual inspection only; not live Studio evidence"
+    },
+    "bloxui_blueprint": {
+      "state": "optional-accelerator",
+      "use": "prototypes, utility/settings screens, declarative screen/state planning"
+    },
+    "bloxui_runtime": {
+      "state": "human-architecture-gate",
+      "use": "only when project explicitly approves Fusion/BloxUI as part of frontend architecture"
+    },
+    "bloxui_ai_or_hosted_service": {
+      "state": "not-required",
+      "use": "bootstrap must remain model/provider neutral and work fully without hosted BloxMaps generation"
+    },
+    "website_cloud_stack": {
+      "state": "excluded",
+      "use": "not part of normal game-development bootstrap"
+    }
+  },
+  "toolchain": {
+    "python": ">=3.11 for BloxMaps local tooling",
+    "luau": "required for local MapGen execution",
+    "lune": "only needed for local BloxUI server paths",
+    "rojo": "BloxMaps currently pins 7.6.1 in its isolated checkout; do not downgrade the game bootstrap pin 7.7.0",
+    "isolation": "run BloxMaps from its own checkout so its dependencies do not replace project tool pins"
+  },
+  "security": {
+    "default_env": {
+      "BLOX_NO_OVERLAY": "1"
+    },
+    "hosted_api_keys": "never required by bootstrap",
+    "network_generation": "human approval if a task elects to use a hosted/BYOK path",
+    "studio_mutation": "must route through studio-operator target verification and task evidence gates",
+    "allowed_plan_output_roots": [
+      ".local/bloxmaps",
+      "04_CHANGESETS"
+    ],
+    "output_boundary_note": "Generated plans must stay in ignored local BloxMaps evidence or an issue-local changeset; arbitrary filesystem writes are blocked by the adapter."
+  },
+  "agent_policy": {
+    "model_neutral": true,
+    "visual_design": "Use the strongest available runtime-neutral visual workflow. Claude Design is one possible binding, never a canonical dependency.",
+    "concurrency": "BloxMaps is a tool/capability, not an extra subagent. Existing max 3 active subagents remains unchanged.",
+    "world_owner": "content-production-worker WORLD mode",
+    "ui_owner": "frontend-worker with creative-director direction; BloxUI remains optional",
+    "review": "assurance-reviewer EXPERIENCE/FUNCTIONAL as appropriate"
+  },
+  "upgrade_policy": "Never track fork main automatically. Review upstream/fork diff, license/security/dependency changes, run fork tests + bootstrap adapter smoke test, then intentionally move the pinned ref."
+}

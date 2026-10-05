@@ -1,0 +1,21 @@
+# ASSET SPEC — TEMPLATE
+
+- Asset ID:
+- Name:
+- Associated Feature:
+- Purpose / Gameplay Role:
+- Source Strategy: reuse / Creator Store / native Parts / Roblox generation / external provider / custom
+- Style:
+- Silhouette:
+- Approximate Dimensions:
+- Triangle/Complexity Budget:
+- Materials / Textures:
+- Pivot / Origin:
+- Collision:
+- Rigging:
+- Animation:
+- View Distance:
+- Performance Constraints:
+- Reference Sources:
+- License/Provenance Requirements:
+- Acceptance Checks:

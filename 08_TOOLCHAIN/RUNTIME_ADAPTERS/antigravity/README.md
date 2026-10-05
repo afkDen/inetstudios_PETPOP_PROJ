@@ -1,0 +1,1 @@
+Antigravity-specific generated adapter support. Canonical project instructions/skills/roles remain vendor-neutral. Configure the official Studio MCP through current Antigravity/Studio connection flow during runtime validation.

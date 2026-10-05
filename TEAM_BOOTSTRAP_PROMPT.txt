@@ -1,0 +1,11 @@
+INITIALIZE / CHECK MY EXISTING v8 ROBLOX TEAM CHECKOUT.
+
+Read AGENTS.md, TEAM_PROTOCOL.md, START_HERE.md and NEW_GAME_SETUP.md. Verify this is a prepared/cloned game repository with template_unconfigured=false and a matching origin. Identify my GitHub username and active runtime.
+
+Use `python scripts/team.py setup --developer <ME> --runtime <RUNTIME>` as the normal readiness entry point. Reuse valid local tools and accepted shared skills. Do not refresh external skills, install tools, change shared policy, push or publish without my explicit approval. If pinned project tools are missing, ask before `--install-tools`; the Rojo Studio plugin needs its own explicit `--install-plugin` consent.
+
+For the first maintainer of a new game, if the shared external skill lock is genuinely absent, explain the first-time `--initialize-shared-skills --confirm-shared-change` path and keep that tracked bootstrap reviewable. Teammates must not redo it.
+
+Do NOT require a disposable Studio playtest merely to let me submit an idea. Live Studio/MCP/Rojo validation is task-time: when an approved task actually needs Studio, follow LIVE_STUDIO_DELIVERY.md against the exact nonproduction place/window/branch.
+
+Report repository/shared-skill/model-policy/tool readiness as PASS/PENDING with evidence. Then STOP. Do not create an Issue or task until I provide/approve the game idea or update.

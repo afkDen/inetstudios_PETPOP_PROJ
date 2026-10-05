@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "PENDING",
+  "operator": "",
+  "runtime_key": "",
+  "source_commit": "",
+  "target": {
+    "name": "",
+    "studio_instance_id": "",
+    "place_id": null,
+    "human_confirmed": false,
+    "non_production": false
+  },
+  "mcp": {
+    "selected_client": "",
+    "connected": false,
+    "probes": {
+      "list_roblox_studios": "",
+      "get_studio_state": "",
+      "search_game_tree": ""
+    },
+    "raw_probe_evidence": ""
+  },
+  "rojo": {
+    "project": "default.project.json",
+    "serve_command": "rojo serve default.project.json",
+    "plugin_connected": false,
+    "source_commit": "",
+    "managed_path": "",
+    "marker_added_evidence": "",
+    "marker_removed_evidence": ""
+  },
+  "playtest": {
+    "started_and_stopped": false,
+    "scenario": "",
+    "observed_result": "",
+    "console": "",
+    "input_trace": "",
+    "screenshot": ""
+  },
+  "human_verification": {
+    "confirmed_by": "",
+    "checked_target": false,
+    "checked_playtest": false
+  }
+}

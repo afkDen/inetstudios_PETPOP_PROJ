@@ -1,0 +1,68 @@
+{
+  "schema_version": 2,
+  "issue": 123,
+  "scope_revision": 0,
+  "branch": "feat/123-feature",
+  "status": "DRAFT",
+  "quality_brief": "04_CHANGESETS/GH-000123_feature/QUALITY_BRIEF.md",
+  "art_direction": {
+    "required": true,
+    "human_approved": false,
+    "reviewer": "",
+    "approval_reference": ""
+  },
+  "skill_use_receipts": [
+    {
+      "role": "content-production-worker",
+      "skill": "building-maps",
+      "loaded_from": ".agents/skills/building-maps/SKILL.md",
+      "purpose": "",
+      "output": ""
+    }
+  ],
+  "placeholders": [
+    {
+      "path": "",
+      "purpose": "BLOCKOUT",
+      "removed_or_approved_as_final": false
+    }
+  ],
+  "functional_tests": [
+    {
+      "scenario": "",
+      "operator": "",
+      "commit": "",
+      "result": "PENDING",
+      "evidence": "",
+      "console": ""
+    }
+  ],
+  "live_studio": {
+    "status": "PENDING",
+    "operator": "",
+    "test_place": "",
+    "commit": "",
+    "evidence": ""
+  },
+  "visual_review": {
+    "status": "PENDING",
+    "reviewer": "",
+    "screenshots": [],
+    "notes": "",
+    "rationale": ""
+  },
+  "ui_review": {
+    "status": "NOT_APPLICABLE",
+    "reviewer": "",
+    "device_screenshots": [],
+    "interaction_evidence": "",
+    "rationale": "Explain why feature has no UI (if NOT_APPLICABLE)"
+  },
+  "independent_review": {
+    "implementers": [],
+    "reviewers": [],
+    "report": ""
+  },
+  "human_integration_approval": "PENDING",
+  "studio_delivery_receipt": "04_CHANGESETS/GH-000123_feature/STUDIO_DELIVERY.json"
+}

@@ -1,0 +1,17 @@
+# Byte-bound project inputs and reviewed skill trees must survive checkout on every OS.
+.agents/skills/** -text
+08_TOOLCHAIN/SKILL_LOCK.json -text
+
+# Human-authored raw requests are provenance records. Git must never normalize line endings.
+04_CHANGESETS/**/USER_REQUEST.txt -text
+
+# Task reference copies are also byte-level provenance records. Preserve CRLF/LF and all other bytes exactly.
+04_CHANGESETS/**/REFERENCES/** -text
+
+# Legacy v7 raw-input paths remain protected for migration/backward compatibility.
+00_INPUT/PROPOSALS/**/*.txt -text
+00_INPUT/GAME_IDEA/rough_game_idea.txt -text
+00_INPUT/UPDATES/PROCESSED/*.txt -text
+
+# Revisioned scope amendments are approval records. Keep their bytes stable across Windows/macOS/Linux checkouts.
+04_CHANGESETS/**/SCOPE_AMENDMENTS/** -text

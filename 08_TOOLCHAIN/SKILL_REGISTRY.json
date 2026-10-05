@@ -1,0 +1,797 @@
+{
+  "schema_version": 3,
+  "canonical_root": ".agents/skills",
+  "layout": "flat-direct-child",
+  "policy": "All active skills share one canonical root; origin/provenance is metadata. Load skills just-in-time and prefer capability-specific adaptations over large generic bundles.",
+  "skills": [
+    {
+      "name": "accessibility-game",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/accessibility-game",
+      "description": "Game accessibility design/review. Use for readable UI, color/contrast, text scaling, remappable controls, reduced motion, sensory alternatives, captions/subtitles, timing tolerance, and accessible onboarding.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "adr-authoring",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/adr-authoring",
+      "source": "magnus919/agent-skills",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "agent-instruction-design",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/agent-instruction-design",
+      "description": "Design and prune AGENTS.md files, role prompts, skills, and agent-facing documentation using context pointers, progressive disclosure, explicit completion criteria, and single-source-of-truth rules.",
+      "trust": "project-authored-adaptation",
+      "license": "MIT",
+      "source": "mattpocock/skills",
+      "source_commit": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+      "source_path": "skills/productivity/writing-for-agents/SKILL.md",
+      "upstream_blob_sha": "a37608daf6e835e767deecfb498facecaaba82ba",
+      "invocation_policy": "maintainer-on-demand"
+    },
+    {
+      "name": "ai-behavior-trees-utility-ai",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/ai-behavior-trees-utility-ai",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "asset-production",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/asset-production",
+      "description": "Game asset production and sourcing. Use for art-direction-controlled sourcing, asset families, specifications, Poly Haven/Openverse/Creator Store search, Blender/glTF cleanup, provenance, licensing, import validation, and approval.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "assurance-two-axis",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/assurance-two-axis",
+      "description": "Keep spec/scope fidelity separate from engineering/project-standard quality during independent review so polished wrong-scope code cannot mask a product miss and spec-correct code cannot hide unsafe implementation.",
+      "trust": "project-authored-adaptation",
+      "license": "MIT",
+      "source": "mattpocock/skills",
+      "source_commit": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+      "source_path": "skills/engineering/code-review/SKILL.md",
+      "upstream_blob_sha": "e28d7acbf7b3bb4d7817b7eb5d9c105af03f6ec4",
+      "invocation_policy": "assurance-only"
+    },
+    {
+      "name": "audio-design",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/audio-design",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "audio-production",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/audio-production",
+      "description": "Roblox SFX/audio production and integration with provenance, layering, spatial behavior, loudness hierarchy and live trigger validation.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "blender-game-asset",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/blender-game-asset",
+      "description": "Reference-driven Blender game-asset modeling pipeline from blockout through export/round-trip validation; optional approved Blender capability.",
+      "trust": "project-authored-adaptation"
+    },
+    {
+      "name": "blender-mcp-production",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/blender-mcp-production",
+      "description": "Priority Blender MCP authoring workflow with target verification, measured modeling gates, Roblox-ready export and round-trip validation.",
+      "trust": "project-authored-adaptation"
+    },
+    {
+      "name": "blender-technical-art",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/blender-technical-art",
+      "description": "Blender technical-art workflow. Use when local Blender is available for topology cleanup, decimation, UV/material consolidation, pivot/scale correction, collision proxies, rig fixes, LODs, deterministic Python automation, or export validation.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "bloxmaps-ui-accelerator",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/bloxmaps-ui-accelerator",
+      "description": "Optional BloxUI blueprint/prototype acceleration without forcing Fusion/runtime adoption or a model vendor.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "bloxmaps-world-production",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/bloxmaps-world-production",
+      "description": "Deterministic BloxMaps world/layout generation, asset-manifest bridge, Studio build verification and review.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "building-3d-objects",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/building-3d-objects",
+      "description": "Roblox-native 3D object building via Studio MCP. Use for props, structures, room-scale models, modular sets, CSG/Parts construction, spatial planning, and post-build validation.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "building-maps",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/building-maps",
+      "description": "Roblox map/world building via Studio MCP. Use for lobbies, arenas, levels, multi-zone environments, terrain/module layout, landmarks, lighting/atmosphere, and large-scale validation.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "camera-systems",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/camera-systems",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "codebase-design",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/codebase-design",
+      "description": "Design deep, testable Roblox/Luau modules with small interfaces and clean seams. Use when module shape, ownership, adapter boundaries, testability, or architectural locality is the real problem.",
+      "trust": "project-authored-adaptation",
+      "license": "MIT",
+      "source": "mattpocock/skills",
+      "source_commit": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+      "source_path": "skills/engineering/codebase-design/SKILL.md",
+      "upstream_blob_sha": "3f63c8146dd2604b419c929e9876b90c30d410e9",
+      "invocation_policy": "model-on-demand"
+    },
+    {
+      "name": "complexity-risk-router",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/complexity-risk-router",
+      "description": "Classify Roblox work into v8 LIGHT/STANDARD/CRITICAL gates and select proportional planning, Studio, testing and review requirements.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "context-checkpoint-manager",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/context-checkpoint-manager",
+      "description": "Creates or repairs durable continuation checkpoints so a fresh agent/runtime session can resume from repository state after interruption, usage exhaustion, restart, or intentional rollover.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "context-memory-curator",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/context-memory-curator",
+      "description": "Just-in-time context, structured checkpoint capsules, stale-context pruning and durable repository memory for long-running agent work.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "create-game-assets",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/create-game-assets",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "decision-grilling",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/decision-grilling",
+      "description": "Resolve consequential ambiguity with a dependency-aware decision frontier. Use when one material product, design, architecture, or workflow decision depends on other unresolved decisions; keep facts with the agent and decisions with the human.",
+      "trust": "project-authored-adaptation",
+      "license": "MIT",
+      "source": "mattpocock/skills",
+      "source_commit": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+      "source_path": "skills/productivity/grilling/SKILL.md",
+      "upstream_blob_sha": "8ca78c6d8f901aab0c5a1f896034b70e666ff2a3",
+      "invocation_policy": "lead-explicit"
+    },
+    {
+      "name": "design-taste",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/design-taste",
+      "description": "Roblox visual taste and anti-generic critique; controlled alternatives, reference transformation and evidence-honest design review.",
+      "trust": "project-authored-adaptation"
+    },
+    {
+      "name": "dialogue-systems",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/dialogue-systems",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "domain-modeling",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/domain-modeling",
+      "description": "Sharpen the game's shared language and durable domain concepts. Use when terms are overloaded, code/design vocabulary conflicts, or a hard-to-reverse surprising tradeoff needs a durable decision record.",
+      "trust": "project-authored-adaptation",
+      "license": "MIT",
+      "source": "mattpocock/skills",
+      "source_commit": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+      "source_path": "skills/engineering/domain-modeling/SKILL.md",
+      "upstream_blob_sha": "a4438c6879c517d1a08e2b5fbca049b632688dfe",
+      "invocation_policy": "model-on-demand"
+    },
+    {
+      "name": "economy-progression",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/economy-progression",
+      "description": "Game economy and progression design. Use for currencies, faucets/sinks, upgrades, rarity, reward schedules, progression curves, monetization boundaries, inflation controls, and balance risk.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "external-questionnaire",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/external-questionnaire",
+      "description": "Create a focused questionnaire when a task is blocked by knowledge held by another stakeholder, artist, developer, vendor, tester, or domain expert. Use instead of asking the current user to guess information they do not possess.",
+      "trust": "project-authored-adaptation",
+      "license": "MIT",
+      "source": "mattpocock/skills",
+      "source_commit": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+      "source_path": "skills/productivity/to-questionnaire/SKILL.md",
+      "upstream_blob_sha": "dadd0c00d6a350acaa15bb9ca1b96b20ead684ca",
+      "invocation_policy": "human-or-lead-explicit"
+    },
+    {
+      "name": "game-ai",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/game-ai",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "game-design-fundamentals",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/game-design-fundamentals",
+      "description": "Game-design analysis. Use for player fantasy, core/session/long-term loops, progression, rewards, economy, difficulty, onboarding, replayability, differentiation, MVP scope, and design tradeoffs.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "game-feel",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/game-feel",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "game-ui-ux",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/game-ui-ux",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "graphify-repo-intelligence",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/graphify-repo-intelligence",
+      "description": "Local-first Graphify repository graph usage for impact/topology/context discovery before broad scans or extra agents.",
+      "trust": "project-authored-adaptation"
+    },
+    {
+      "name": "human-decision-gates",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/human-decision-gates",
+      "description": "Human-in-the-loop gate policy for scope, art direction, installations/MCPs, paid services, licensing, destructive changes, migrations, Production and policy exceptions.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "impeccable-ui",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/impeccable-ui",
+      "description": "Roblox-adapted interface craft and critique guidance inspired by Impeccable/Anthropic frontend design; distinctive hierarchy, tokens, complete states and anti-generic polish.",
+      "trust": "project-authored-adaptation"
+    },
+    {
+      "name": "implementation-package-builder",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/implementation-package-builder",
+      "description": "Builds deterministic implementation contracts for Roblox feature workers. Use before delegating Tier 2\u20134 implementation.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "input-systems",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/input-systems",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "interaction-motion",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/interaction-motion",
+      "description": "Roblox-adapted interaction/motion guidance inspired by Emil Kowalski; tactile feedback, transitions, easing, interruptibility and reduced-motion review.",
+      "trust": "project-authored-adaptation"
+    },
+    {
+      "name": "level-design",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/level-design",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "mcp-tool-orchestration",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/mcp-tool-orchestration",
+      "description": "On-demand MCP/tool discovery, official-first routing, least privilege, install approval, efficient programmatic use and evidence rules.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "model-policy-governor",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/model-policy-governor",
+      "description": "Mandatory shared model/effort governance, exact-model runtime binding, local evidence validation and documented high-effort exceptions across Claude Code, Codex, Antigravity and future runtimes.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "performance-optimization",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/performance-optimization",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "physics-tuning",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/physics-tuning",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "playable-vertical-slice",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/playable-vertical-slice",
+      "description": "Demand executable gameplay proof, integrated server/client loops and actual Studio acceptance scenarios before declaring a feature done; a Rojo build, stub code or mock UI alone does not count.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "polyhaven",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/polyhaven",
+      "description": "Poly Haven asset discovery and safe download planning. Use for free CC0 models, textures, HDRIs, taxonomy, metadata, file variants, and provenance through the Poly Haven public API.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "primary-source-research",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/primary-source-research",
+      "description": "Investigate a task question using authoritative primary sources and leave a concise cited research note. Use when repository/tool evidence is insufficient and external facts materially affect a decision or implementation.",
+      "trust": "project-authored-adaptation",
+      "license": "MIT",
+      "source": "mattpocock/skills",
+      "source_commit": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+      "source_path": "skills/engineering/research/SKILL.md",
+      "upstream_blob_sha": "fecee97e9457ba039678d2fcf1b1bc9fca78307d",
+      "invocation_policy": "model-on-demand"
+    },
+    {
+      "name": "procedural-gen",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/procedural-gen",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "process-inbox",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/process-inbox",
+      "description": "Convert a rough Roblox idea/update into streamlined issue-local task state while preserving the human request; retain legacy inbox compatibility.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "project-initializer",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/project-initializer",
+      "description": "Prepare or repair a v8 Roblox team checkout, shared skills and local developer runtime without forcing live Studio validation before idea capture.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "qa-methodology",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/qa-methodology",
+      "source": "magnus919/agent-skills",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "quality-gate",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/quality-gate",
+      "description": "Apply risk-proportional LIGHT/STANDARD/CRITICAL Definition-of-Done gates and independent review requirements.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "release-readiness-review",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/release-readiness-review",
+      "description": "Performs final independent readiness review before merge/tag/release. Use for substantial changesets and all release candidates.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "roblox",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-animation",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-animation",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-audio",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-audio",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-core",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-core",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-datastores",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-datastores",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-frontend-systems",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/roblox-frontend-systems",
+      "description": "Roblox-native responsive GUI/HUD systems, device input, safe areas, states, performance and server trust boundaries while preserving approved visual depth.",
+      "trust": "project-authored-adaptation"
+    },
+    {
+      "name": "roblox-gamepasses",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-gamepasses",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-mcp",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-mcp",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-networking",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-networking",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-npcs",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-npcs",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-open-cloud",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-open-cloud",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-physics",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-physics",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-rojo",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-rojo",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-studio-workflow",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-studio-workflow",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-teleport",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-teleport",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-testing",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-testing",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-ui-polish",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/roblox-ui-polish",
+      "description": "Reference-driven Roblox GUI visual design, functional state bindings and device-tested live Studio UI iteration.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "roblox-user-interfaces",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-user-interfaces",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "roblox-vfx",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/roblox-vfx",
+      "source": "nonlooped/roblox-suite",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "router",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/router",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "save-systems",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/save-systems",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "secure-software-engineering",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/secure-software-engineering",
+      "source": "magnus919/agent-skills",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "shader-programming",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/shader-programming",
+      "source": "gamedev-skills/awesome-gamedev-agent-skills",
+      "license": "Apache-2.0",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "skill-supply-chain-review",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/skill-supply-chain-review",
+      "description": "Agent-skill supply-chain review. Use before installing/updating third-party skills to inspect SKILL.md, bundled scripts, package manifests, lifecycle hooks, network/process/file access, licenses, and prompt/tool-injection risk.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "skill-use-audit",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/skill-use-audit",
+      "description": "Verify that selected subagents loaded their specific skills and produced the required artifacts; do not treat skill names, execution claims or self-reviews as proof.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "studio-place-integration",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/studio-place-integration",
+      "description": "Mandatory correct-place Studio MCP + Rojo separate handshake and verified live edit/sync/playtest evidence.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "stylized-asset-families",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/stylized-asset-families",
+      "description": "Art-directed CC0 stylized assets and consistent families with licensing, import and in-game visual verification.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "systematic-debugging",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/systematic-debugging",
+      "description": "Evidence-first Roblox debugging using the cheapest tight feedback loop; avoids mandatory TDD and escalates architecture after repeated failed fixes.",
+      "trust": "project-authored-adaptation",
+      "license": "MIT",
+      "invocation_policy": "model-on-demand",
+      "adapted_sources": [
+        {
+          "repository": "mattpocock/skills",
+          "commit": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+          "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+          "blob_sha": "1b929e29fb519c26b500d3eda744177986883ac8"
+        },
+        {
+          "repository": "magnus919/agent-skills",
+          "commit": "affec9d8cba35a3b8d632a64ab547ea8fcc53380",
+          "path": "systematic-debugging/SKILL.md",
+          "blob_sha": "b070675c43c2925d87de0d190968a7abba7e658f"
+        }
+      ]
+    },
+    {
+      "name": "team-workflow-orchestrator",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/team-workflow-orchestrator",
+      "description": "Run the streamlined v8 issue-scoped workflow: one Issue, one task branch, byte-preserved request, risk-proportional implementation, draft PR, human merge/release.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "technical-documentation",
+      "origin": "external",
+      "state": "installed-during-initialization",
+      "path": ".agents/skills/technical-documentation",
+      "source": "magnus919/agent-skills",
+      "license": "MIT",
+      "trust": "requires-hash-and-semantic-review"
+    },
+    {
+      "name": "ui-production",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/ui-production",
+      "description": "Require a real UI screen and interaction map, approved mockup, stateful functional wiring, responsive device validation and screenshots before production UI can be accepted; never count an empty UI skeleton as done.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "vfx-production",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/vfx-production",
+      "description": "Roblox VFX production for readable layered particles/beams/trails/lights with gameplay intent, mobile budgets and real Studio validation.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "visual-design-orchestration",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/visual-design-orchestration",
+      "description": "Provider-neutral visual-design capability ladder and evidence/approval workflow.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "visual-production",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/visual-production",
+      "description": "Require pre-approved game art direction, distinct reference/concept options, asset families, material/lighting/set-dressing pass, provenance and full-scale in-game camera screenshots before a visually significant feature may be marked finished. Blocks/grayboxes are explicitly stage-labeled, never passed off as final unless the signed art bible calls for them.",
+      "trust": "project-authored"
+    },
+    {
+      "name": "workflow-retrospective",
+      "origin": "project",
+      "state": "bundled",
+      "path": ".agents/skills/workflow-retrospective",
+      "description": "Review a completed or troubled agent session for improvements to navigation, checks, instructions, tool economy, information access, and workflow guardrails. Use explicitly after meaningful failure/friction; do not run after every task.",
+      "trust": "project-authored-adaptation",
+      "license": "MIT",
+      "source": "mattpocock/skills",
+      "source_commit": "24fe0ef7737efae15c87225755e9f6f5965e4888",
+      "source_path": "skills/engineering/retro/SKILL.md",
+      "upstream_blob_sha": "12149acf2dd23b4514dec57b04a6293eaa1352fa",
+      "invocation_policy": "human-or-lead-explicit"
+    }
+  ]
+}

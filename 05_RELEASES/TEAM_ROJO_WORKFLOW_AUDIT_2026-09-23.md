@@ -1,0 +1,22 @@
+# Team Git/Rojo workflow migration — release audit
+
+Scope: update the previous **portable team** scaffold to use a unified runtime-neutral prompt, safe automatic clean-main sync, consent-gated draft PR/merge handoff, `next` only after a verified prior merge, and a scoped filesystem-first Rojo project. This release is a **local package**, not a push to a specific game repository or a connected Roblox Studio deployment.
+
+## Principal conflict resolutions
+
+- **Pull before work vs preserving branches**: `scripts/team_workflow.py propose/start` requires a clean main, validates origin against team policy, fetches and fast-forwards main with `--ff-only`, then creates an issue branch. Any dirty state, local unpublished main commit, incorrect remote or existing issue branch blocks. On an active task branch, `sync` fetches only; intentional merging/rebasing and conflict resolution remain the owner's decision.
+- **Same prompt vs two approval stages**: first raw `.txt` uses `TEAM_PROPOSAL_PROMPT.txt`; approved issues use `TEAM_TASK_PROMPT.txt` with only issue/path/slug differing. The raw proposal's bytes and SHA-256 remain immutable; human scope approval is separate from mere Git integration.
+- **AI task completion vs accepted project state**: the agent may finish its branch and tests, then asks before pushing/opening a draft PR. A second human reviews it; an authorized integrator performs the actual merge via GitHub UI or interactive guarded CLI. Neither branch completion nor agent review auto-updates global state, tags or Roblox production.
+- **Continuous task intake vs speculative branches**: the next issue gets a new branch only after an actual next approved proposal exists; optional `next` verifies the previous PR's merged status and then performs latest-main sync.
+- **Rojo vs Studio overwrite risks**: `default.project.json` owns only `src/server`, `src/client` and `src/shared` mapped into three named folders. Every parent uses `$ignoreUnknownInstances: true`; actual Studio sync is restricted to disposable/individual test places pending review of the existing live hierarchy. Hand-built scenes/terrain retain human Studio ownership until a reviewed migration. Do not dual-sync code with Script Sync or MCP.
+- **CI truthfulness**: static Rojo mapping validation and portable tests are local and offline; GitHub Actions now includes a pinned Rojo toolchain/native build, but this job and a live Studio/test place **have not yet run in the user's repository**. A successful native build is not a gameplay, persistence, security or multiplayer test.
+- **Version neutrality**: `AGENTS.md` remains the only master contract; a single `team-workflow-orchestrator` skill is registered once in `.agents/skills/` and assigned to the canonical `lead-orchestrator` role. Runtime- and model-specific configuration stays in ignored `.local/`.
+
+## Review/evidence
+
+- Offline static validator, complete unit suite, Python compilation, Rojo mapping static validator, derived role/skill routing check, disposable lifecycle, Git diff checks and ZIP extraction verification are release gates. The new local-bare-remote unit tests simulate teammate main updates, CRLF preservation, dirty/unpublished-main/remote mismatch refusal, task branch creation, draft PR preview, external-human merge requirement, no headless merge and new task branching only after an actually merged PR (simulated GitHub API evidence). They do **not** validate real GitHub API access or remote permissions.
+- The external skill lock/38 upstream installations are still a target-workstation maintainer bootstrap requirement. Native Rojo CLI and Studio plugin need installation and real validation before full game-workflow readiness can be claimed. No paid generation APIs have been enabled.
+
+## Manual release gates for the team
+
+Inspect the existing GitHub remote before importing this package; never force-push the ZIP history. Merge an authorized reviewed infrastructure PR containing the Rojo mapping/CI and approved skill lock. Configure GitHub collaborators and permitted reviewer/integrator roles. Install matching Rojo CLI/plugin with reviewed pinned versions, inspect live Studio hierarchy and run a disposable place sync/build/playtest before expanding ownership. Keep CI external-action versions under security review; protect main with status checks when the team's GitHub plan permits. Record team IP/license and release ownership independently of AI chat.

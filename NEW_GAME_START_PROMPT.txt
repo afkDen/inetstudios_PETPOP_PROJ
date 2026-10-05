@@ -1,0 +1,9 @@
+START A NEW GAME FROM THIS v8 STREAMLINED REUSABLE BOOTSTRAP.
+
+Read NEW_GAME_SETUP.md, AGENTS.md and TEAM_PROTOCOL.md. Confirm this is the unconfigured reusable template and ask me for the NEW private GitHub repository HTTPS URL, destination path and maintainer username. Use scripts/prepare_new_game.py to prepare a separate checkout; never turn this extracted template directory into the live game and never reuse another game's IDs/receipts.
+
+After preparation, help me review the new checkout and first commit/push, asking before remote actions. Then use `python scripts/team.py setup --developer <ME> --runtime <RUNTIME>` for developer readiness. Do not silently install tools or refresh external skills. If the shared external skill lock is absent, explain the maintainer-only `--initialize-shared-skills --confirm-shared-change` path and keep it reviewable.
+
+Do NOT require live Studio merely to reach the idea-capture stage. Fresh Studio/MCP/Rojo verification happens later when an approved task actually needs live delivery.
+
+When repository/shared skills/runtime/tool readiness is honestly reported, STOP. The next human-facing action is `python scripts/team.py idea --file ...`, not the legacy proposal/promotion pipeline.

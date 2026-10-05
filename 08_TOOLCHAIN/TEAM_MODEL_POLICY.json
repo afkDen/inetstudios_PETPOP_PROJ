@@ -1,0 +1,96 @@
+{
+  "schema_version": 2,
+  "policy_id": "medium-first-team-models-2026-10-05-v8.4",
+  "description": "Human-approved model/effort ceilings. v8.4 preserves the three-subagent capability-consolidated roles and provider-neutral production tooling while adding just-in-time engineering-reasoning skills without raising ordinary effort defaults.",
+  "common_classes": [
+    "BALANCED",
+    "DEEP",
+    "REVIEW_DEEP",
+    "TOOL_RELIABLE"
+  ],
+  "baseline_effort_by_class": {
+    "BALANCED": "medium",
+    "DEEP": "medium",
+    "REVIEW_DEEP": "medium",
+    "TOOL_RELIABLE": "medium"
+  },
+  "profiles": {
+    "claude-code": {
+      "model": "claude-opus-5-5",
+      "allowed_efforts": [
+        "low",
+        "medium"
+      ],
+      "default_effort": "medium",
+      "allow_unapproved_model_substitution": false,
+      "high_policy": "prohibited",
+      "unavailable_effort_policy": "block",
+      "validation_method": "inspect active Claude Code model/effort AND a delegated test worker; check environment/per-invocation override and org policy. Never trust frontmatter alone."
+    },
+    "codex": {
+      "model": "gpt-6.1-sol",
+      "allowed_efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default_effort": "medium",
+      "allow_unapproved_model_substitution": false,
+      "high_policy": "explicit_justification_only",
+      "high_eligible_classes": [
+        "DEEP",
+        "REVIEW_DEEP"
+      ],
+      "unavailable_effort_policy": "block",
+      "validation_method": "inspect actual Codex CLI/IDE main and delegated model/effort, including parent/session overrides; verify GPT-6.1 Sol unless a later human-approved policy changes it."
+    },
+    "antigravity": {
+      "model": "gemini-3.8-flash",
+      "preferred_model_only": true,
+      "allowed_efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default_effort": "medium",
+      "allow_unapproved_model_substitution": false,
+      "high_policy": "explicit_justification_only",
+      "high_eligible_classes": [
+        "DEEP",
+        "REVIEW_DEEP"
+      ],
+      "unavailable_effort_policy": "documented_medium_fallback_for_fast_only",
+      "validation_method": "inspect actual available model and selectable effort in Antigravity; inherited native agents do not force exact effort; test a delegated agent or use portable role packets if needed."
+    },
+    "generic": {
+      "model": null,
+      "allowed_efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default_effort": "medium",
+      "allow_unapproved_model_substitution": false,
+      "high_policy": "explicit_justification_only",
+      "high_eligible_classes": [
+        "DEEP",
+        "REVIEW_DEEP"
+      ],
+      "unavailable_effort_policy": "block",
+      "validation_method": "human explicitly approves an actual available model and supported effort mapping per runtime; never infer support from class names."
+    }
+  },
+  "independent_review": {
+    "fresh_context_required": true,
+    "implementer_must_not_be_sole_reviewer": true,
+    "same_model_allowed_when_distinct_contexts": true,
+    "different_model_optional_if_team_approves": true
+  },
+  "limits": {
+    "do_not_change_runtime_or_model_silently": true,
+    "no_high_for_ordinary_implementation": true,
+    "no_xhigh_max_ultra_without_policy_change": true,
+    "decompose_or_request_human_when_limit_is_insufficient": true,
+    "do_not_mark_runtime_ready_from_static_config": true
+  }
+}

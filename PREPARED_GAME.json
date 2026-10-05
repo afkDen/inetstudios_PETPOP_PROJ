@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "target_repository": "https://github.com/afkDen/inetstudios_PETPOP_PROJ.git",
+  "maintainer": "afkDen",
+  "scaffold_version": "v8.5-scope-evolution",
+  "global_bootstrap_status": "INITIALIZATION_REQUIRED",
+  "proof_of_github_access": false,
+  "proof_of_studio_validation": false
+}

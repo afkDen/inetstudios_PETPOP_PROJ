@@ -1,0 +1,23 @@
+name: Game idea
+description: Start a new game idea or major concept.
+title: "[IDEA] "
+body:
+  - type: textarea
+    id: vision
+    attributes:
+      label: Rough idea
+      description: Write it naturally. The local v8 task command preserves your original .txt separately.
+      placeholder: "I want players to..."
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints / must-not-change
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Workflow
+      options:
+        - label: I understand the AI will design/plan first and a human approves scope before substantial implementation.
+          required: true

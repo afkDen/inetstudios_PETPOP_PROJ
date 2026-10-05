@@ -1,0 +1,32 @@
+# GitHub review requests only; enforcement requires configured branch rules and the owners' write access.
+# Replace @afkDen if the eventual repo owner differs.
+/AGENTS.md @afkDen
+/TEAM_PROTOCOL.md @afkDen
+/08_TOOLCHAIN/ @afkDen
+/.agents/skills/ @afkDen
+/06_PROJECT_STATE/ @afkDen
+/.github/ @afkDen
+/01_GAME_DESIGN/ @afkDen
+
+# Filesystem-first Rojo mapping and team automation are integration-owned.
+/default.project.json @afkDen
+/rokit.toml @afkDen
+/02_TECHNICAL/ROJO_WORKFLOW.md @afkDen
+/TEAM_WORKFLOW.md @afkDen
+/src/shared/ @afkDen
+
+/02_TECHNICAL/PRODUCTION_QUALITY_CONTRACT.md @afkDen
+/02_TECHNICAL/DEPENDENCY_BOOTSTRAP.md @afkDen
+/scripts/bootstrap_dev_tools.py @afkDen
+/scripts/validate_feature_evidence.py @afkDen
+
+# Global toolchain/config and source-controlled initialization scripts
+/.github/workflows/ @afkDen
+/scripts/initialize_project.py @afkDen
+/scripts/prepare_new_game.py @afkDen
+/scripts/validate_repo.py @afkDen
+/scripts/validate_team.py @afkDen
+/scripts/audit_skill_tree.py @afkDen
+/scripts/sync_runtime_adapters.py @afkDen
+/scripts/validate_model_policy.py @afkDen
+/scripts/create_model_preflight.py @afkDen

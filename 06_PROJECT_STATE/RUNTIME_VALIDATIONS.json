@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "runtimes": {},
+  "purpose": "EMPTY_TEMPLATE_ONLY; each teammate uses .local/RUNTIME_VALIDATIONS.json; do not commit personal runtime evidence"
+}

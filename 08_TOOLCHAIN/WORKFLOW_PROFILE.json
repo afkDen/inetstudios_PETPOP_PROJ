@@ -1,0 +1,81 @@
+{
+  "schema_version": 6,
+  "workflow_id": "streamlined-v8.5",
+  "public_cli": "scripts/team.py",
+  "principle": "simple outside, sophisticated inside",
+  "task_root": "04_CHANGESETS",
+  "canonical_design": "GAME_DESIGN.md",
+  "default_risk": "STANDARD",
+  "legacy_proposal_pipeline_supported": true,
+  "normal_flow": {
+    "require_github_issue": true,
+    "require_separate_proposal_branch": false,
+    "require_separate_proposal_pr": false,
+    "require_promotion_branch": false,
+    "require_promotion_pr": false,
+    "require_scope_approval_before_substantial_implementation": true,
+    "require_draft_pr_before_merge": true,
+    "require_second_human_for_substantial_pr": true,
+    "automatic_push": false,
+    "automatic_merge": false,
+    "automatic_roblox_publish": false,
+    "require_scope_amendment_approval_after_initial_approval": true,
+    "preserve_prior_scope_approvals": true
+  },
+  "risk_tiers": {
+    "LIGHT": {
+      "description": "Small, contained, reversible change with no persistence/economy/security/release impact.",
+      "independent_ai_review": "optional",
+      "quality_packet": "compact",
+      "studio": "required only when behavior or visuals need live verification"
+    },
+    "STANDARD": {
+      "description": "Normal gameplay, UI, content, or system work.",
+      "independent_ai_review": "required for substantial changes",
+      "quality_packet": "standard",
+      "studio": "required for player-visible or Studio-dependent acceptance"
+    },
+    "CRITICAL": {
+      "description": "Persistence, economy/monetization/RNG, networking/security, migrations, shared architecture, or release-sensitive work.",
+      "independent_ai_review": "required with relevant specialist reviewers",
+      "quality_packet": "full",
+      "studio": "required when applicable; explicit human gates cannot be waived"
+    }
+  },
+  "orchestration": {
+    "default_strategy": "lead + Graphify repo intelligence + provider-neutral visual workflow + minimum necessary capability specialists + one fresh assurance reviewer",
+    "parallelism": "hard cap 3 active subagents; parallelize only read-only or genuinely disjoint scopes; one writer per file/system/Studio root/Blender scene area",
+    "delegation_budgets": {
+      "LIGHT": {
+        "active_subagents": 1,
+        "production_or_analysis_specialists": 1,
+        "assurance_reviewers": 0,
+        "notes": "zero subagents is preferred when the Lead can complete safely; reviewer only when material"
+      },
+      "STANDARD": {
+        "active_subagents": 2,
+        "production_or_analysis_specialists": 2,
+        "assurance_reviewers": 1,
+        "notes": "normally one or two active specialists; three only for genuinely disjoint work and still never above the global cap"
+      },
+      "CRITICAL": {
+        "active_subagents": 3,
+        "production_or_analysis_specialists": 2,
+        "assurance_reviewers": 1,
+        "notes": "use sequential waves for additional specialist/review modes; never exceed three active subagents"
+      }
+    },
+    "context": "subagents receive compact dispatch packets, Graphify query results when useful, and only authoritative files needed for their owned scope; never the full parent chat/tool log",
+    "human_decision_gate": "required for material scope/creative fork, installs/MCPs/cost, licensing, destructive operations, migrations, Production/shared-place mutation, monetization/compliance, security/policy exceptions",
+    "max_concurrent_subagents": 3,
+    "delegation_efficiency": "Before spawning a subagent, ask whether Graphify/tool lookup + Lead reasoning is sufficient. Prefer one multi-mode specialist over several narrow agents.",
+    "decision_quality": {
+      "default": "compact human-decision-gates request",
+      "dependent_material_decisions": "Lead may use decision-grilling; LIGHT normally avoids multi-round interviewing",
+      "discoverable_facts": "agent/tool/research responsibility",
+      "external_human_knowledge": "external-questionnaire",
+      "post_approval_change": "draft revisioned scope amendment; current approved revision remains active until explicit amendment approval; pause only affected work"
+    },
+    "usage_economy": "No global TDD ritual. Prefer existing cheap deterministic checks/feedback loops; add new regression tests when task/risk requires them or they are the cheapest durable guard. Retrospectives are explicit, not automatic."
+  }
+}
